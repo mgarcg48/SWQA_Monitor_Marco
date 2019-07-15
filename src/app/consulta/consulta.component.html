@@ -1,0 +1,87 @@
+<style>
+  .pointer {cursor: pointer;}
+</style>
+
+
+<div class="image" background-color="#464646">
+    <br><br><br><br><br><br>
+  <h3 margin-top="200px">Resultados del proyecto</h3>
+
+  <ngx-spinner
+  bdOpacity = 0.9
+  bdColor = "#cce6ff"
+  size = "medium"
+  color = "#0000ff"
+  type = "line-scale-party"
+  fullScreen = "true"
+  >
+  <p style="color: #0000ff" > Cargando... </p>
+  </ngx-spinner>
+
+  <mat-form-field id="fecha1">
+    <input matInput [matDatepicker]="picker" [max]="maxDatePicker" placeholder="Fecha inicial" (dateChange)="cambioFechaInicial($event)">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field id="fecha">
+    <input matInput [matDatepicker]="picker1" [min]="minDatePicker" placeholder="Fecha final" (dateChange)="cambioFechaFinal($event)">
+    <mat-datepicker-toggle width="20%" matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+<div id="testeando">
+  <div id='myDiv'></div>
+</div>
+  <br>
+  <div id='otraDiv' class="image"></div><br>
+
+
+  <table  class="blueTable"  width="80%" align="center" cellpadding="0" cellspacing="0">
+    <caption>Features del proyecto</caption>
+    <tr align="center">
+      <th>Nombre de la feature</th>
+      <th>Pasados</th>
+      <th>Fallados</th>
+      <th>Skipeados</th>
+      <th>Test Undefined</th>
+      <th>Resultado</th>
+    </tr>
+      <ng-container *ngFor= "let elementos of nombreFeature; index as i">
+        <tr >
+          <td on-click="segundaParte(elementos); scroll(target)" class="pointer">{{elementos}}</td>
+          <td>{{scenariosPasadosFeature[i]}}</td>
+          <td>{{scenariosFalladosFeature[i]}}</td>
+          <td>{{skipeadosFeature[i]}}</td>
+          <td>{{undefinedFeature[i]}}</td>
+          <td id="prueba" [ngClass]="{'red': featureResult[i]=='Failed', 'green': featureResult[i]=='Passed'}" >{{featureResult[i]}}</td>
+        </tr>
+      </ng-container>
+      <tfoot>
+        <tr>
+          <td>TOTAL</td>
+          <td>{{porcentajePasados | number}}%</td>
+          <td>{{porcentajeFallados | number}}%</td>
+          <td>{{testSkipeados}}</td>
+          <td>{{testUndefined}}</td>
+          <td id="prueba" [ngClass]="{'red': resultadoFinal=='Failed', 'green': resultadoFinal=='Passed'}" >{{resultadoFinal}}</td>
+        </tr>
+      </tfoot>
+  </table>
+
+
+  <br>
+
+  <mat-form-field id="selector">
+    <mat-select id='marco' placeholder="Feature"  [(value)]="selected">
+      <mat-option *ngFor="let state of featureSinRepetir" [value]="state" on-click="segundaParte(selected)" width="50%">{{state}}</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+
+
+  <div #target id='divFeature' class="image"></div><br>
+  <div id='myDiv1' class="image"></div>
+  <br><br>
+</div>

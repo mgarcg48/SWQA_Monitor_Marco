@@ -1,0 +1,133 @@
+h5 {
+  text-align: center;
+  color: #4d4dff;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 70%;
+  text-align: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  color: #FD7527;  
+  background: #464646;
+  
+}
+
+table.blueTable {
+  
+  background-color: #464646;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: left;
+  border-collapse: collapse;
+
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #000000;
+  padding: 5px 10px;
+}
+table.blueTable tbody td {
+  font-size: 13px;
+}
+table.blueTable tr:nth-child(even) {
+  background: #464646;
+}
+table.blueTable th {
+  background: #464646;
+}
+th.pru {
+  text-align: center;
+}
+table.blueTable th {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+
+}
+table.blueTable th:first-child {
+  border-left: none;
+}
+
+table.blueTable td {
+  font-size: 14px;
+  color: white;
+}
+table.blueTable tfoot .links {
+  text-align: right;
+}
+table.blueTable tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #464646;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+
+.mat-paginator {
+  margin-right: 15%;
+  margin-left:  15%;
+  background: #464646;
+  color: white;
+}
+
+.mat-icon {
+  color: #FD7527;
+}
+
+#primero {
+  align-content: center; 
+    padding-left: 10px;
+    
+}
+.image{
+
+  background-size:cover;
+  
+  background-image:url(/assets/img/FONFO_FRACTAL.png);
+
+
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	background-color: #464646;
+}
+
+.boton {
+  width: 10%;
+  background-color: #FD7527;
+  margin-left: 1%;
+  color: white;
+  margin-right: 64%;
+  white-space: normal;
+}
+.boton1 {
+  width: 10%;
+  background-color: #FD7527;
+  margin-left: 15%;
+  color: white;
+  margin-right: 0%;
+  white-space: normal;
+}
+
+label {
+  display: inline-block;
+  width: 200px;
+  color: #464646;
+}
+
+.mat-raised-button {
+  background-color: #FD7527;
+  color: white;
+}
+
+h3 {
+  color: #464646;
+  text-align: center;
+}
+
+#config {
+  background-color: white;
+}

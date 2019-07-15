@@ -1,0 +1,49 @@
+<mat-dialog-content>
+    
+        <h3>Añadir proyecto</h3>
+    
+</mat-dialog-content>
+<mat-dialog-actions>
+
+<div [hidden]="submitted">
+    <form #addProyectoform="ngForm">
+ 
+      <div class="form-group">
+        <label for="nombre">Nombre del proyecto </label>
+        <input type="text" tabindex="1" class="form-control" id="nombre"
+        required
+        [(ngModel)]="proyecto.nombre" name="nombre" #nombre="ngModel">
+        <span></span>
+        <div [hidden]="nombre.valid || nombre.pristine"
+             class="alert alert-danger">
+            Se requiere un nombre para el proyecto
+        </div>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="identificador">Identificador</label>
+        <input type="text" tabindex="2" class="form-control" id="identificador"
+        required
+        [(ngModel)]="proyecto.identificador" name="identificador" #identificador="ngModel" margin-left="20px">
+        <span></span>
+        <div [hidden]="identificador.valid || identificador.pristine"
+             class="alert alert-danger">
+            Se requiere un identificador para el proyecto
+        </div>
+      </div>
+      <br>
+      <div class="btn-group btn-group-sm">
+          <button mat-raised-button type="button" class="btn btn-dark" (click)="addProyecto()" [disabled]="!addProyectoform.form.valid">Añadir</button>
+          <button mat-raised-button mat-dialog-close >Cancelar</button>
+      </div>
+
+    </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <p>El proyecto se ha añadido <span class="badge badge-light">{{proyecto.nombre}}  {{proyecto.identificador}}</span></p>
+	<div class="btn-group btn-group-sm">
+    	<button mat-raised-button mat-dialog-close type="button" class="btn btn-dark" (click)="newProyecto(); addProyectoform.reset()">Continuar</button>
+    </div>
+</div>
+</mat-dialog-actions>

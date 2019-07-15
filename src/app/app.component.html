@@ -1,0 +1,30 @@
+
+  <div class="container">    
+          <mat-toolbar class="mitoolbar">
+            <span class="fill-remaining-space">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+              <mat-menu #menu="matMenu" [overlapTrigger]="false">
+                <button mat-menu-item routerLink="proyecto">
+                  <mat-icon>work</mat-icon>
+                  <span>Proyectos</span>
+                </button>
+                <button mat-menu-item routerLink="tareas">
+                  <mat-icon>list</mat-icon>
+                  <span>Ejecuciones</span>
+                </button>
+              
+
+              </mat-menu>
+            
+          </span>
+          <span class="fill-remaining-space">{{title}}</span>
+          </mat-toolbar>
+
+
+          
+</div>
+<div class="image">
+<router-outlet class="otrocomponente"></router-outlet>
+</div>

@@ -1,0 +1,27 @@
+<mat-dialog-content>
+    
+    <h3>Configuracion del intervalo de ejecución</h3>
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions>
+
+<div>
+<form #configuracionform="ngForm" >
+<mat-form-field id="config">
+    <mat-select placeholder="Periodo" [(ngModel)]="seleccionada" name="periodo" [(value)]="select">
+        <mat-option value="Diariamente">Diariamente</mat-option>
+        <mat-option value="Semanalmente">Semanalmete</mat-option>
+        <mat-option value="Mensualmente">Mensualmete</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</form>
+
+</div>
+<div>	
+  <button mat-raised-button mat-dialog-close type="button" class="btn btn-dark" (click)="save(); configuracionform.reset()">Continuar</button>
+</div>
+
+</mat-dialog-actions>

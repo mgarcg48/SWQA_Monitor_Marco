@@ -1,0 +1,71 @@
+<body>
+<div class="image">
+
+        <br><br><br><br><br><br>
+<!--<h5>Todas las tareas </h5>
+	<div *ngFor="let tar of tareas">
+		<a style="color:black"><span class="badge badge-dark"></span> {{tar.nombre}} ------ Id de la tarea: {{tar.id}} -------Idenficador de la tarea: {{tar.identificador}}</a>
+	</div>
+<div>
+	<mat-list>
+		<h3 >Tareas</h3>
+		<mat-list-item *ngFor="let tare of tareas">
+			Nombre:{{tare.nombre}}	id:{{tare.id}}     identificador:{{tare.identificador}} Usuario: {{tare.usuario}}
+		</mat-list-item>
+	</mat-list>
+</div>-->
+
+	<!--Esta parte de codigo no funciona porque la funcion que llama esta comentada
+	<div *ngFor="let tar of tareasUsu">
+		<a style="color:black"><span class="badge badge-dark"></span>{{tar.nombre}} ------ Id de la tarea: {{tar.id}} ------- Idenficador de la tarea: {{tar.identificador}}</a>
+	</div>-->
+    
+    <style>
+
+        .pointer {cursor: pointer;}
+        
+        </style>
+
+
+
+<mat-form-field >
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrar">
+    </mat-form-field>
+
+<table mat-table [dataSource]="MyDataSource" class="blueTable" matSort>
+        
+      
+
+        <ng-container matColumnDef="id" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header width=5%>Id</th>
+            <td mat-cell *matCellDef="let row" [routerLink]="['/consulta', row.id]" class="pointer">{{row.id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="url" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header width=65%>Url</th>
+            <td mat-cell *matCellDef="let row" [routerLink]="['/consulta', row.id]" class="pointer"color="primary">{{row.url}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="fecha" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header width=25%>Fecha</th>
+            <td mat-cell *matCellDef="let row" [routerLink]="['/consulta', row.id]" class="pointer">{{row.fecha | date:'dd-MM-yyyy-HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="identificador" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header width=5%>Identificador</th>
+            <td mat-cell *matCellDef="let row" [routerLink]="['/consulta', row.id]" class="pointer">{{row.identificador}}</td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+       
+    </table>
+
+    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]">  
+        </mat-paginator> 
+
+
+    </div>
+
+</body>
